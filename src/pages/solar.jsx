@@ -9,10 +9,18 @@ const Solar = () => {
     <div className={styles.main}>
       <Header />
       <div className={styles.wrapper}>
-        <Bar />
-        <Bar top={'1300px'} />
+        <Bar top={'900px'} />
+        <Bar top={'1900px'} />
         <div className={styles.contentContainer}>
-          <div className={styles.elementPic} style={{ width: '30%', height: '70%' }}>
+          <div className={styles.solorWindPic} style={{ width: '30%', height: '90%' }}>
+            <Image alt="" src="/assets/helf_sun.png" layout="fill" objectFit="contain" />
+          </div>
+          <div className={styles.solorWindPic} style={{ width: '80%', height: '70%', left: '15%' }}>
+            <Image alt="" src="/assets/solar_pic.png" layout="fill" objectFit="contain" />
+          </div>
+        </div>
+        <div className={styles.contentContainer}>
+          <div className={styles.elementPic} style={{ width: '40%', height: '70%' }}>
             <Image alt="" src="/assets/solar_pic_2.png" layout="fill" objectFit="contain" />
           </div>
           <div className={styles.paragraphContainerRight}>
@@ -40,7 +48,7 @@ const Solar = () => {
         </div>
         <div className={styles.contentContainer} style={{ marginTop: '0' }}>
           <div className={styles.paragraphContainerLeft}>
-            <p className={styles.title} style={{ width: '500px' }}>
+            <p className={styles.title} style={{ width: '1000px' }}>
               Protect our Earth&apos;s magnetic field
             </p>
           </div>

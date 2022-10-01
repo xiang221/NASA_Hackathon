@@ -59,7 +59,10 @@
     margin-bottom: 25px;
     display: block;
     color:#F79E4B;
-    font: normal normal 600 33px Bahnschrift;
+    font: 'Montserrat';
+    font-weight: 900;
+    font-size: 50px;
+    width:400px;
 }
 
 /* .solorPicContainer{
@@ -98,5 +101,11 @@
 .elementPic{
     position: absolute;
     left:16%;
-    top:200px;
+    top:150px;
+}
+
+.solorWindPic{
+    position: absolute;
+    left:-10%;
+    top:20px;
 }
