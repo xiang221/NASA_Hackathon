@@ -14,18 +14,18 @@ const Header = (props = 'main') => {
     <div className={styles.headerContainer}>
       <Image src={img} alt="gift_pic" width={50} height={50} />
       <div className={styles.navBarContainer}>
-        <button type="button" className={styles.navBar} onClick={() => router.push('/weather')}>
+        <button type="button" className={styles.navBar} onClick={() => router.push('/Weather')}>
           Space Weather
         </button>
-        <button type="button" className={styles.navBar} onClick={() => router.push('/solar')}>
+        <button type="button" className={styles.navBar} onClick={() => router.push('/Solar')}>
           Solar Wind
         </button>
-        <button type="button" className={styles.navBar} onClick={() => router.push('/parker')}>
+        <button type="button" className={styles.navBar} onClick={() => router.push('/Parker')}>
           Parker Solar Probeher
         </button>
-        <button type="button" className={styles.navBar} onClick={() => router.push('/source')}>
+        {/* <button type="button" className={styles.navBar} onClick={() => router.push('/source')}>
           Source
-        </button>
+        </button> */}
       </div>
     </div>
   );
