@@ -1,0 +1,35 @@
+.logoBtn{
+    margin:20px 0 0 20px;
+    display: inline-block;
+}
+
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    justify-content: space-between;
+}
+
+.navBarContainer{
+    top: 50%;
+}
+
+.navBar{
+    border-radius: 20px;
+    padding: 10px;
+    border-width:0;
+    cursor: pointer;
+    margin:0 5px;
+    background-color: rgba(112,112,112,0.3);
+}
+
+.footer{
+    height:100px;
+    width:100vw;
+}
+
+.barContainer{
+    position: absolute;
+    top:230px;
+    left:-43%;
+}
