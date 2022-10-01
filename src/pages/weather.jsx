@@ -1,11 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Header from '../components/Header';
 import styles from '../styles/Page.module.css';
 import Footer from '../components/Footer';
 import Bar from '../components/Bar';
 
-const weather = () => {
+const Weather = () => {
+  const [weather, setWeather] = useState(false);
+  const [machine, setMachine] = useState('1');
+  const [light, setLight] = useState('0');
+
+  const causeBadWeather = () => {
+    setWeather(true);
+  };
+
+  useEffect(() => {
+    if (weather === true) {
+      setLight('1');
+      const timer = setTimeout(() => {
+        setMachine('0');
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [weather]);
+
+  async function getData() {
+    try {
+      const data = await fetch('https://80c3-2401-e180-8842-8330-f6-145b-a4e-fad3.jp.ngrok.io/low_energy_protons.json');
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  getData();
+
   return (
     <div className={styles.main}>
       <Header />
@@ -28,16 +57,24 @@ const weather = () => {
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.paragraphContainerLeft}>
-            <p className={styles.title}>Bad Space Weather</p>
+            <p className={styles.title} style={{ width: '600px' }}>
+              Bad Space Weather
+            </p>
           </div>
           <div class={styles.weatherResultPic} style={{ width: '70%', height: '70%' }}>
-            <Image alt="" src="/assets/bad_weather_result.png" layout="fill" objectFit="contain" />
+            <Image
+              alt=""
+              src="/assets/bad_weather_result.png"
+              layout="fill"
+              objectFit="contain"
+              style={{ opacity: machine }}
+            />
           </div>
           <div class={styles.lightPic} style={{ width: '45%', height: '45%' }}>
-            <Image alt="" src="/assets/light.png" layout="fill" objectFit="contain" />
+            <Image alt="" src="/assets/light.png" layout="fill" objectFit="contain" style={{ opacity: light }} />
           </div>
           <div className={styles.badWeatherPic} style={{ width: '20%', height: '50%' }}>
-            <Image alt="" src="/assets/sun.png" layout="fill" objectFit="contain" />
+            <Image alt="" src="/assets/sun.png" layout="fill" objectFit="contain" onClick={() => causeBadWeather()} />
           </div>
         </div>
       </div>
@@ -46,4 +83,4 @@ const weather = () => {
   );
 };
 
-export default weather;
+export default Weather;

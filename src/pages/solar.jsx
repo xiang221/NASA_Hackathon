@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Header from '../components/Header';
 import styles from '../styles/Page.module.css';
-import Footer from '../components/Footer';
 import Bar from '../components/Bar';
 
-const solar = () => {
+const Solar = () => {
   return (
     <div className={styles.main}>
       <Header />
       <div className={styles.wrapper}>
-        <Bar />
-        <Bar top={'1300px'} />
+        <Bar top={'900px'} />
+        <Bar top={'1900px'} />
         <div className={styles.contentContainer}>
-          <div className={styles.elementPic} style={{ width: '30%', height: '70%' }}>
+          <div className={styles.solorWindPic} style={{ width: '30%', height: '90%' }}>
+            <Image alt="" src="/assets/helf_sun.png" layout="fill" objectFit="contain" />
+          </div>
+          <div className={styles.solorWindPic} style={{ width: '80%', height: '70%', left: '15%' }}>
+            <Image alt="" src="/assets/solar_pic.png" layout="fill" objectFit="contain" />
+          </div>
+        </div>
+        <div className={styles.contentContainer}>
+          <div className={styles.elementPic} style={{ width: '40%', height: '70%' }}>
             <Image alt="" src="/assets/solar_pic_2.png" layout="fill" objectFit="contain" />
           </div>
           <div className={styles.paragraphContainerRight}>
@@ -28,8 +35,8 @@ const solar = () => {
           </div>
         </div>
         <div className={styles.contentContainer} style={{ height: '500px' }}>
-          <div className={styles.picContainerRight} style={{ width: '60%', height: '60%' }}>
-            <Image alt="" src="/assets/earth_line.png" layout="fill" objectFit="none" />
+          <div className={styles.picContainerRight} style={{ width: '30%', height: '50%' }}>
+            <Image alt="" src="/assets/earth_line.png" layout="fill" objectFit="cover" />
           </div>
           <div className={styles.paragraphContainerLeft}>
             <p className={styles.title}>Protect our Earth&apos;s magnetic field</p>
@@ -41,13 +48,12 @@ const solar = () => {
         </div>
         <div className={styles.contentContainer} style={{ marginTop: '0' }}>
           <div className={styles.paragraphContainerLeft}>
-            <p className={styles.title} style={{ width: '500px' }}>
+            <p className={styles.title} style={{ width: '1000px' }}>
               Protect our Earth&apos;s magnetic field
             </p>
           </div>
         </div>
       </div>
-      <Footer></Footer>
     </div>
     // <div className={styles.main}>
     //     <Header/>
@@ -79,4 +85,4 @@ const solar = () => {
   );
 };
 
-export default solar;
+export default Solar;

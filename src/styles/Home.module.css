@@ -1,14 +1,15 @@
-.container {
+.btnContainer {
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height:100vh;
+  max-height:100vh;
+  width: 100%;
+  height:100%;
 }
 
 
 .startBtn{
+  position: absolute;
+  left:45%;
+  top:50%;
   cursor: pointer;
 }
 
