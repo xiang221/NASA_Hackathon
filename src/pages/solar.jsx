@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Header from '../components/Header';
 import styles from '../styles/Page.module.css';
-import Footer from '../components/Footer';
 import Bar from '../components/Bar';
 
 const Solar = () => {
@@ -29,7 +28,7 @@ const Solar = () => {
         </div>
         <div className={styles.contentContainer} style={{ height: '500px' }}>
           <div className={styles.picContainerRight} style={{ width: '30%', height: '50%' }}>
-            <Image alt="" src="/assets/earth_line.png" layout="fill" objectFit="cover" style="left:100px" />
+            <Image alt="" src="/assets/earth_line.png" layout="fill" objectFit="cover" />
           </div>
           <div className={styles.paragraphContainerLeft}>
             <p className={styles.title}>Protect our Earth&apos;s magnetic field</p>
@@ -47,7 +46,6 @@ const Solar = () => {
           </div>
         </div>
       </div>
-      <Footer></Footer>
     </div>
     // <div className={styles.main}>
     //     <Header/>

@@ -6,16 +6,16 @@ import Footer from '../components/Footer';
 import Bar from '../components/Bar';
 
 const Weather = () => {
-  async function getData() {
-    try {
-      const data = await fetch('https://fca6-2401-e180-8842-8330-2060-e323-5215-7da2.jp.ngrok.io/low_energy_protons');
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async function getData() {
+  //   try {
+  //     const data = await fetch('https://fca6-2401-e180-8842-8330-2060-e323-5215-7da2.jp.ngrok.io/low_energy_protons');
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
-  getData();
+  // getData();
 
   return (
     <div className={styles.main}>
