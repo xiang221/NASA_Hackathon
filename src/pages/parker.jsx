@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Footer from '../components/Footer';
 import Bar from '../components/Bar';
 
-const Parker = () => {
+const parker = () => {
   return (
     <div className={styles.main}>
       <Header />
@@ -47,4 +47,4 @@ const Parker = () => {
   );
 };
 
-export default Parker;
+export default parker;

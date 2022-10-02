@@ -3,6 +3,7 @@ import React from 'react';
 export const Chart1 = (props) => {
   //code here
   console.log(props.chart, props.data);
+
   if (!props.data){
     return
   }
@@ -66,7 +67,6 @@ export const Chart1 = (props) => {
       .style("stroke-width", "3");
 
 
-    
 
   return (
     //html
