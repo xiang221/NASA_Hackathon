@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react';
+import { React } from 'react';
 import styles from '../styles/Home.module.css';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -7,14 +7,6 @@ import { useRouter } from 'next/router';
 
 const Home = () => {
   const router = useRouter();
-  const [transition, setTransition] = useState('');
-  const [transform, setTransform] = useState('');
-
-  function getStart() {
-    // setTransition('all 1s ease-out')
-    // setTransform('scale(2,2)')
-    router.push('/weather');
-  }
 
   return (
     <div>
@@ -25,11 +17,14 @@ const Home = () => {
       </Head>
       <Header type="index" />
       <div className={styles.btnContainer}></div>
-      <div
-        className={styles.startBtn}
-        style={{ width: '10%', height: '10%', transition: { transition }, transform: { transform } }}
-      >
-        <Image src="/assets/start_btn.png" alt="" layout="fill" objectFit="contain" onClick={() => getStart()} />
+      <div className={styles.startBtn} style={{ width: '10%', height: '10%' }}>
+        <Image
+          src="/assets/start_btn.png"
+          alt=""
+          layout="fill"
+          objectFit="contain"
+          onClick={() => router.push('/weather')}
+        />
       </div>
     </div>
   );

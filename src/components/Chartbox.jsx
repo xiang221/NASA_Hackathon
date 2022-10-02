@@ -9,6 +9,11 @@ export const Chart1 = (props) => {
     return;
   }
 
+<<<<<<< HEAD
+=======
+
+  let data = props.data[0]
+>>>>>>> cfb29687186c6fdc9263cba6bf3634feb235536a
 
   // set the dimensions and margins of the graph
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
