@@ -24,7 +24,7 @@ const info = () => {
           </p>
           <br />
           <p>
-            2.PerSPective shows ACE real-time data of Solar wind clearly. People can save time searching for data.{' '}
+            2.PerSPective shows ACE real-time data of Solar wind clearly. People can save time searching for data.
             <br />
           </p>
           <br />
@@ -35,7 +35,7 @@ const info = () => {
             <br />
           </p>
         </div>
-        <div className={styles.picContainerRight} style={{ width: '40%', height: '40%', top: '300px' }}>
+        <div className={styles.picContainerRight} style={{ width: '40%', height: '40%', top: '350px' }}>
           <Image alt="" src="/assets/earth.png" layout="fill" objectFit="contain" />
         </div>
       </div>
@@ -46,7 +46,7 @@ const info = () => {
               PerSPective Team
             </p>
           </div>
-          <div style={{ width: '50%', height: '70%' }}>
+          <div className={styles.picContainer} style={{ width: '80%', height: '80%' }}>
             <Image alt="" src="/assets/member.png" layout="fill" objectFit="contain" />
           </div>
         </div>
