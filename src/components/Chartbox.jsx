@@ -1,6 +1,5 @@
 import React from 'react';
-import * as d3 from "d3";
-
+import * as d3 from 'd3';
 
 export const Chart1 = (props) => {
   //code here
@@ -9,68 +8,66 @@ export const Chart1 = (props) => {
     return;
   }
 
-
-  let data = props.data[0]
-
   // set the dimensions and margins of the graph
-  var margin = {top: 20, right: 20, bottom: 30, left: 50},
-  width = 500 - margin.left - margin.right,
-  height = 250 - margin.top - margin.bottom;
-
+  var margin = { top: 20, right: 20, bottom: 30, left: 50 },
+    width = 500 - margin.left - margin.right,
+    height = 250 - margin.top - margin.bottom;
 
   // append the svg obgect to the body of the page
   // appends a 'group' element to 'svg'
   // moves the 'group' element to the top left margin
 
-  const svg = d3.select(".diagram")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  const svg = d3
+    .select('.diagram')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
   // set the ranges
-  const parseTime = d3.timeParse("%Y%m%d %H00")
+  const parseTime = d3.timeParse('%Y%m%d %H00');
 
-  data.forEach(function(d) {
-    d.date = parseTime(d.date)
+  props.data[0].forEach(function (d) {
+    d.date = parseTime(d.date);
     d.value = +d.value;
   });
-  const xScale = d3.scaleTime().range([0, width])
-  const yScale = d3.scaleLinear().range([height, 0])
-  xScale.domain(d3.extent(data, function(d) {
-      return d.date
-  }))
-  yScale.domain(d3.extent(data, function(d) {
-      return d.value
-  }))
- 
-  svg.append("g")
-  .attr("transform", "translate( 0 ," + height + ")")
-  .call(d3.axisBottom(xScale)
-      .ticks(5)) 
+  const xScale = d3.scaleTime().range([0, width]);
+  const yScale = d3.scaleLinear().range([height, 0]);
+  xScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.date;
+    }),
+  );
+  yScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.value;
+    }),
+  );
 
-  svg.append("g")
-    .call(d3.axisLeft(yScale)
-        .ticks(4)
-        .tickSize(-width))
-    .attr("opacity", "1");
+  svg
+    .append('g')
+    .attr('transform', 'translate( 0 ,' + height + ')')
+    .call(d3.axisBottom(xScale).ticks(5));
 
-  const valueline = d3.line()
-  .curve(d3.curveMonotoneX)
-  .x(function(d) {
-      return xScale(d.date)
-  })
-  .y(function(d) {
-      return yScale(d.value)
-  })
-  
-  svg.append("path")
-  .data([data])
-  .attr("d", valueline)
-  .style("fill", "none")
-  .style("stroke", "#ffffff")
-  .style("stroke-width", "3");
+  svg.append('g').call(d3.axisLeft(yScale).ticks(4).tickSize(-width)).attr('opacity', '1');
 
+  const valueline = d3
+    .line()
+    .curve(d3.curveMonotoneX)
+    .x(function (d) {
+      return xScale(d.date);
+    })
+    .y(function (d) {
+      return yScale(d.value);
+    });
+
+  svg
+    .append('path')
+    .data([props.data[0]])
+    .attr('d', valueline)
+    .style('fill', 'none')
+    .style('stroke', '#ffffff')
+    .style('stroke-width', '3');
 
   return (
     //html
@@ -82,40 +79,304 @@ export const Chart1 = (props) => {
 
 export const Chart2 = (props) => {
   //code here
-  console.log(props.chart, props.data);
+
+  if (!props.data) {
+    return;
+  }
+
+  // set the dimensions and margins of the graph
+  var margin = { top: 20, right: 20, bottom: 30, left: 50 },
+    width = 500 - margin.left - margin.right,
+    height = 250 - margin.top - margin.bottom;
+
+  // append the svg obgect to the body of the page
+  // appends a 'group' element to 'svg'
+  // moves the 'group' element to the top left margin
+
+  const svg = d3
+    .select('.diagram')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+  // set the ranges
+  const parseTime = d3.timeParse('%Y%m%d %H00');
+
+  props.data[0].forEach(function (d) {
+    d.date = parseTime(d.date);
+    d.value = +d.value;
+  });
+  const xScale = d3.scaleTime().range([0, width]);
+  const yScale = d3.scaleLinear().range([height, 0]);
+  xScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.date;
+    }),
+  );
+  yScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.value;
+    }),
+  );
+
+  svg
+    .append('g')
+    .attr('transform', 'translate( 0 ,' + height + ')')
+    .call(d3.axisBottom(xScale).ticks(5));
+
+  svg.append('g').call(d3.axisLeft(yScale).ticks(4).tickSize(-width)).attr('opacity', '1');
+
+  const valueline = d3
+    .line()
+    .curve(d3.curveMonotoneX)
+    .x(function (d) {
+      return xScale(d.date);
+    })
+    .y(function (d) {
+      return yScale(d.value);
+    });
+
+  svg
+    .append('path')
+    .data([props.data[0]])
+    .attr('d', valueline)
+    .style('fill', 'none')
+    .style('stroke', '#ffffff')
+    .style('stroke-width', '3');
 
   return (
     //html
-    <div>Chart2</div>
+    <div>
+      <svg class="diagram"></svg>
+    </div>
   );
 };
 
 export const Chart3 = (props) => {
   //code here
-  console.log(props.chart, props.data);
+
+  if (!props.data) {
+    return;
+  }
+
+  // set the dimensions and margins of the graph
+  var margin = { top: 20, right: 20, bottom: 30, left: 50 },
+    width = 500 - margin.left - margin.right,
+    height = 250 - margin.top - margin.bottom;
+
+  // append the svg obgect to the body of the page
+  // appends a 'group' element to 'svg'
+  // moves the 'group' element to the top left margin
+
+  const svg = d3
+    .select('.diagram')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+  // set the ranges
+  const parseTime = d3.timeParse('%Y%m%d %H00');
+
+  props.data[0].forEach(function (d) {
+    d.date = parseTime(d.date);
+    d.value = +d.value;
+  });
+  const xScale = d3.scaleTime().range([0, width]);
+  const yScale = d3.scaleLinear().range([height, 0]);
+  xScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.date;
+    }),
+  );
+  yScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.value;
+    }),
+  );
+
+  svg
+    .append('g')
+    .attr('transform', 'translate( 0 ,' + height + ')')
+    .call(d3.axisBottom(xScale).ticks(5));
+
+  svg.append('g').call(d3.axisLeft(yScale).ticks(4).tickSize(-width)).attr('opacity', '1');
+
+  const valueline = d3
+    .line()
+    .curve(d3.curveMonotoneX)
+    .x(function (d) {
+      return xScale(d.date);
+    })
+    .y(function (d) {
+      return yScale(d.value);
+    });
+
+  svg
+    .append('path')
+    .data([props.data[0]])
+    .attr('d', valueline)
+    .style('fill', 'none')
+    .style('stroke', '#ffffff')
+    .style('stroke-width', '3');
 
   return (
     //html
-    <div>Chart3</div>
+    <div>
+      <svg class="diagram"></svg>
+    </div>
   );
 };
 
 export const Chart4 = (props) => {
   //code here
-  console.log(props.chart, props.data);
+
+  if (!props.data) {
+    return;
+  }
+
+  // set the dimensions and margins of the graph
+  var margin = { top: 20, right: 20, bottom: 30, left: 50 },
+    width = 500 - margin.left - margin.right,
+    height = 250 - margin.top - margin.bottom;
+
+  // append the svg obgect to the body of the page
+  // appends a 'group' element to 'svg'
+  // moves the 'group' element to the top left margin
+
+  const svg = d3
+    .select('.diagram')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+  // set the ranges
+  const parseTime = d3.timeParse('%Y%m%d %H00');
+
+  props.data[0].forEach(function (d) {
+    d.date = parseTime(d.date);
+    d.value = +d.value;
+  });
+  const xScale = d3.scaleTime().range([0, width]);
+  const yScale = d3.scaleLinear().range([height, 0]);
+  xScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.date;
+    }),
+  );
+  yScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.value;
+    }),
+  );
+
+  svg
+    .append('g')
+    .attr('transform', 'translate( 0 ,' + height + ')')
+    .call(d3.axisBottom(xScale).ticks(5));
+
+  svg.append('g').call(d3.axisLeft(yScale).ticks(4).tickSize(-width)).attr('opacity', '1');
+
+  const valueline = d3
+    .line()
+    .curve(d3.curveMonotoneX)
+    .x(function (d) {
+      return xScale(d.date);
+    })
+    .y(function (d) {
+      return yScale(d.value);
+    });
+
+  svg
+    .append('path')
+    .data([props.data[0]])
+    .attr('d', valueline)
+    .style('fill', 'none')
+    .style('stroke', '#ffffff')
+    .style('stroke-width', '3');
 
   return (
     //html
-    <div>Chart4</div>
+    <div>
+      <svg class="diagram"></svg>
+    </div>
   );
 };
 
 export const Chart5 = (props) => {
   //code here
-  console.log(props.chart, props.data);
+
+  if (!props.data) {
+    return;
+  }
+
+  // set the dimensions and margins of the graph
+  var margin = { top: 20, right: 20, bottom: 30, left: 50 },
+    width = 500 - margin.left - margin.right,
+    height = 250 - margin.top - margin.bottom;
+
+  // append the svg obgect to the body of the page
+  // appends a 'group' element to 'svg'
+  // moves the 'group' element to the top left margin
+
+  const svg = d3
+    .select('.diagram')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+  // set the ranges
+  const parseTime = d3.timeParse('%Y%m%d %H00');
+
+  props.data[0].forEach(function (d) {
+    d.date = parseTime(d.date);
+    d.value = +d.value;
+  });
+  const xScale = d3.scaleTime().range([0, width]);
+  const yScale = d3.scaleLinear().range([height, 0]);
+  xScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.date;
+    }),
+  );
+  yScale.domain(
+    d3.extent(props.data[0], function (d) {
+      return d.value;
+    }),
+  );
+
+  svg
+    .append('g')
+    .attr('transform', 'translate( 0 ,' + height + ')')
+    .call(d3.axisBottom(xScale).ticks(5));
+
+  svg.append('g').call(d3.axisLeft(yScale).ticks(4).tickSize(-width)).attr('opacity', '1');
+
+  const valueline = d3
+    .line()
+    .curve(d3.curveMonotoneX)
+    .x(function (d) {
+      return xScale(d.date);
+    })
+    .y(function (d) {
+      return yScale(d.value);
+    });
+
+  svg
+    .append('path')
+    .data([props.data[0]])
+    .attr('d', valueline)
+    .style('fill', 'none')
+    .style('stroke', '#ffffff')
+    .style('stroke-width', '3');
 
   return (
     //html
-    <div>Chart5</div>
+    <div>
+      <svg class="diagram"></svg>
+    </div>
   );
 };
