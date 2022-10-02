@@ -68,7 +68,7 @@ const Solar = () => {
             <Chart />
           </div>
         </div>
-        <div className={styles.contentContainer} style={{ marginTop: '0' }}>
+        <div className={styles.contentContainer}>
           <div className={styles.paragraphContainerLeft}>
             <p className={styles.title} style={{ width: '1000px' }}>
               Connect Arduino to control our hardware device
