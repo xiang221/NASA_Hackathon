@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import styles from '../styles/Page.module.css';
 import Image from 'next/image';
 import Footer from '../components/Footer';
-import Bar from '../components/Bar';
 
 const about = () => {
   return (
