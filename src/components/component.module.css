@@ -16,12 +16,13 @@
 
 .navBar{
     border-radius: 20px;
-    padding: 10px;
+    padding: 10px 15px;
     border-width:0;
     cursor: pointer;
     margin:0 5px;
     background-color: rgba(112,112,112,0.3);
     color:white;
+    font-size: 23px;
 }
 
 .footer{
@@ -33,4 +34,31 @@
     position: absolute;
     top:230px;
     left:-43%;
+}
+
+.chartBtnContainer{
+    display: flex;
+    position: absolute;
+    top:600px;
+}
+
+.chartContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.chartBtn{
+    border-radius: 20px;
+    padding: 15px;
+    cursor: pointer;
+    margin:10px;
+    min-width:200px;
+    background-color: rgba(112,112,112,0.3);
+    color:white;
+}
+
+.chartBoxContainer{
+    position:absolute;
+    left:70px;
+
 }

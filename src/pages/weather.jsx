@@ -24,17 +24,6 @@ const Weather = () => {
     }
   }, [weather]);
 
-  async function getData() {
-    try {
-      const data = await fetch('https://hero-parker-server.herokuapp.com/low_energy_protons.json');
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  getData();
-
   return (
     <div className={styles.main}>
       <Header />
