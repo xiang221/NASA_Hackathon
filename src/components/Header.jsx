@@ -22,7 +22,7 @@ const Header = (props = 'main') => {
             Solar Wind
           </button>
           <button type="button" className={styles.navBar} onClick={() => router.push('/parker')}>
-            Parker Solar Probeher
+            Parker Solar Probe
           </button>
           <button type="button" className={styles.navBar} onClick={() => router.push('/info')}>
             About

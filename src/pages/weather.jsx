@@ -35,8 +35,8 @@ const Weather = () => {
             <p>
               Space weather results from the sun. It is related to all solar activity, including solar wind, sunspots,
               and solar flares. Most important of all, space weather may have a significant impact on earth. Just like
-              our daily weather on earth, there i’s good and bad space weather. When solar activities are relatively
-              calm, we say that is ‘good space weather’”. Conversely, ‘bad space weather” occurs when solar activities
+              our daily weather on earth, there is good and bad space weather. When solar activities are relatively
+              calm, we say that is ‘good space weather’. Conversely, ‘bad space weather’ occurs when solar activities
               are quite active. Sometimes, bad space weather even interferes with communications, GPS, and power systems
               on earth. In addition, the operation of satellites and spacecraft may also be affected.
             </p>
