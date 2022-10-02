@@ -1,23 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Header from '../components/Header';
 import styles from '../styles/Page.module.css';
-import Bar from '../components/Bar';
 import Chart from '../components/Chart';
+import Bar from '../components/Bar';
 
 const Solar = () => {
+  const [control, changeControl] = useState(false);
+  const [opacity, setOpacity] = useState('0.5');
+  const clickOn = (control) => {
+    changeControl(control);
+    if (control == true) {
+      setOpacity('1');
+    } else {
+      setOpacity('0.5');
+    }
+  };
+
+  useEffect(() => {}, [opacity]);
+
   return (
     <div className={styles.main}>
       <Header />
       <div className={styles.wrapper}>
-        <Bar top={'900px'} />
-        <Bar top={'1900px'} />
-        <Bar top={'2900px'} />
+        <Bar top="800px" />
+        <Bar top="2300px" />
         <div className={styles.contentContainer}>
-          <div className={styles.solorWindPic} style={{ width: '30%', height: '90%' }}>
+          <div className={styles.solorWindPic} style={{ width: '30%', height: '70%' }}>
             <Image alt="" src="/assets/helf_sun.png" layout="fill" objectFit="contain" />
           </div>
-          <div className={styles.solorWindPic} style={{ width: '80%', height: '70%', left: '15%' }}>
+          <div className={styles.solorWindPic} style={{ width: '80%', height: '70%', left: '20%' }}>
             <Image alt="" src="/assets/solar_pic.png" layout="fill" objectFit="contain" />
           </div>
         </div>
@@ -37,7 +49,7 @@ const Solar = () => {
           </div>
         </div>
         <div className={styles.contentContainer} style={{ height: '500px' }}>
-          <div className={styles.picContainerRight} style={{ width: '50%', height: '80%', overflow: 'hidden' }}>
+          <div className={styles.picContainerRight} style={{ width: '40%', height: '70%' }}>
             <Image alt="" src="/assets/earth_line.png" layout="fill" objectFit="contain" />
           </div>
           <div className={styles.paragraphContainerLeft}>
@@ -61,6 +73,21 @@ const Solar = () => {
             <p className={styles.title} style={{ width: '1000px' }}>
               Connect Arduino to control our hardware device
             </p>
+          </div>
+          <div className={styles.picOnBtn} style={{ width: '20%', height: '40%' }}>
+            {control === true && (
+              <Image alt="" src="/assets/on.png" layout="fill" objectFit="contain" onClick={() => clickOn(!control)} />
+            )}
+            {control === false && (
+              <Image alt="" src="/assets/off.png" layout="fill" objectFit="contain" onClick={() => clickOn(!control)} />
+            )}
+          </div>
+          <div className={styles.picOnBtn} style={{ width: '20%', height: '40%', top: '250px' }}></div>
+          <div
+            className={styles.picContainerRight}
+            style={{ width: '30%', height: '50%', top: '230px', opacity: opacity }}
+          >
+            <Image alt="" src="/assets/arduino.png" layout="fill" objectFit="contain" />
           </div>
         </div>
       </div>

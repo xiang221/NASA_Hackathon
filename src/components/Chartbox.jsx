@@ -3,6 +3,12 @@ import React from 'react';
 export const Chart1 = (props) => {
   //code here
   console.log(props.chart, props.data);
+  const testData = props.data;
+  let keys = [];
+  let values = [];
+  if (!testData) {
+    return;
+  }
 
   return (
     //html

@@ -24,6 +24,8 @@ const Chart = () => {
     getData(chart);
   }, [chart]);
 
+  console.log(data);
+
   return (
     <div className={styles.chartContainer}>
       <button type="button" className={styles.chartBtn} onClick={() => setChart('low_energy_protons')}>
