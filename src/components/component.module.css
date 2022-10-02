@@ -22,7 +22,7 @@
     margin:0 5px;
     background-color: rgba(112,112,112,0.3);
     color:white;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 .footer{
@@ -60,5 +60,4 @@
 .chartBoxContainer{
     position:absolute;
     left:70px;
-
 }

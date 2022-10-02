@@ -4,7 +4,7 @@ import styles from '../styles/Page.module.css';
 import Image from 'next/image';
 import Footer from '../components/Footer';
 
-const about = () => {
+const info = () => {
   return (
     <div className={styles.main}>
       <Header />
@@ -56,4 +56,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default info;

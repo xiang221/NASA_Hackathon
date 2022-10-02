@@ -24,7 +24,7 @@ const Header = (props = 'main') => {
           <button type="button" className={styles.navBar} onClick={() => router.push('/parker')}>
             Parker Solar Probeher
           </button>
-          <button type="button" className={styles.navBar} onClick={() => router.push('/about')}>
+          <button type="button" className={styles.navBar} onClick={() => router.push('/info')}>
             About
           </button>
         </div>
