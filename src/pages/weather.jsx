@@ -33,11 +33,12 @@ const Weather = () => {
           <div className={styles.paragraphContainerLeft}>
             <p className={styles.title}>Space Weather</p>
             <p>
-              Space weather originates from the sun, and it generally refers to all solar activity, including sunspots
-              and solar flares, and its effects on Earth. These activities are constantly changing, sometimes strong and
-              sometimes weak. &ldquo;Good weather&ldquo; is when solar activity is calm; &ldquo;bad weather&ldquo; is
-              when solar activity is high and may affect communications, navigation and power systems on Earth, as well
-              as the operation of satellites or spacecraft.
+              Space weather results from the sun. It is related to all solar activity, including solar wind, sunspots,
+              and solar flares. Most important of all, space weather may have a significant impact on earth. Just like
+              our daily weather on earth, there i’s good and bad space weather. When solar activities are relatively
+              calm, we say that is ‘good space weather’”. Conversely, ‘bad space weather” occurs when solar activities
+              are quite active. Sometimes, bad space weather even interferes with communications, GPS, and power systems
+              on earth. In addition, the operation of satellites and spacecraft may also be affected.
             </p>
           </div>
           <div className={styles.picContainerRight} style={{ width: '30%', height: '70%' }}>

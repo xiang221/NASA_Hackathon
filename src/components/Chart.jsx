@@ -16,15 +16,13 @@ const Chart = () => {
           saveData(data[chart]);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 
   useEffect(() => {
     getData(chart);
   }, [chart]);
-
-  console.log(data);
 
   return (
     <div className={styles.chartContainer}>

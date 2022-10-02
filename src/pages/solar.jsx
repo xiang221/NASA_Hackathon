@@ -40,11 +40,10 @@ const Solar = () => {
           <div className={styles.paragraphContainerRight}>
             <p className={styles.title}>Solar wind</p>
             <p>
-              The solar wind refers specifically to the ultra-fast flow of plasma emanating from the upper atmosphere of
-              the Sun. At the high temperature of the sun&apos;s corona, atoms such as hydrogen and helium are ionized
-              into positively charged protons, helium nuclei, and negatively charged free electrons. The motion of these
-              charged particles and their high speed shoot towards the outer periphery of the sun, forming the solar
-              wind.
+              Solar wind is a plasma stream consisting of charged particles with ultra-high speed. They are emitted from
+              the corona, the upper atmosphere of the sun. Because of the high temperature, hydrogen and helium atoms
+              ionize and become positively charged protons, He nucleus, and negatively charged electrons. They fly
+              outward from the surface of the sun with supersonic velocity, which forms solar wind.
             </p>
           </div>
         </div>
@@ -53,17 +52,17 @@ const Solar = () => {
             <Image alt="" src="/assets/earth_line.png" layout="fill" objectFit="contain" />
           </div>
           <div className={styles.paragraphContainerLeft}>
-            <p className={styles.title}>Protect our Earth&apos;s magnetic field</p>
+            <p className={styles.title}>Protect our Earth</p>
             <p>
-              The Earth&apos;s magnetic field acts like an invisible giant shield, keeping particles from the sun out of
-              space, allowing them to bypass the Earth and prevent terrestrial life from being harmed.
+              If solar wind hits earth strongly and harms it, it may have a severe impact and affect our daily lives.
+              Fortunately, the magnetic field can protect us, just like an invisible shield surrounding the planet.
             </p>
           </div>
         </div>
         <div className={styles.contentContainer} style={{ marginTop: '0' }}>
           <div className={styles.paragraphContainerLeft}>
             <p className={styles.title} style={{ width: '1000px' }}>
-              Protect our Earth&apos;s magnetic field
+              ACE REAL-TIME SOLAR WIND
             </p>
             <Chart />
           </div>
@@ -71,7 +70,7 @@ const Solar = () => {
         <div className={styles.contentContainer}>
           <div className={styles.paragraphContainerLeft}>
             <p className={styles.title} style={{ width: '1000px' }}>
-              Connect Arduino to control our hardware device
+              Connect Arduino to control our device
             </p>
           </div>
           <div className={styles.picOnBtn} style={{ width: '20%', height: '40%' }}>

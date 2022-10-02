@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 
 export const Chart1 = (props) => {
   //code here
-  console.log(props.chart, props.data);
 
   if (!props.data) {
     return;
