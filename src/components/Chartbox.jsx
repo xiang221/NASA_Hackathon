@@ -72,7 +72,7 @@ export const Chart1 = (props) => {
   return (
     //html
     <div>
-      <svg class="diagram"></svg>
+      <svg className="diagram"></svg>
     </div>
   );
 };
@@ -148,7 +148,7 @@ export const Chart2 = (props) => {
   return (
     //html
     <div>
-      <svg class="diagram"></svg>
+      <svg className="diagram"></svg>
     </div>
   );
 };
@@ -224,7 +224,7 @@ export const Chart3 = (props) => {
   return (
     //html
     <div>
-      <svg class="diagram"></svg>
+      <svg className="diagram"></svg>
     </div>
   );
 };
@@ -300,7 +300,7 @@ export const Chart4 = (props) => {
   return (
     //html
     <div>
-      <svg class="diagram"></svg>
+      <svg className="diagram"></svg>
     </div>
   );
 };
@@ -376,7 +376,7 @@ export const Chart5 = (props) => {
   return (
     //html
     <div>
-      <svg class="diagram"></svg>
+      <svg className="diagram"></svg>
     </div>
   );
 };
