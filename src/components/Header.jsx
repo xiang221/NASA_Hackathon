@@ -16,16 +16,16 @@ const Header = (props = 'main') => {
         ''
       ) : (
         <div className={styles.navBarContainer}>
-          <button type="button" className={styles.navBar} onClick={() => router.push('/Weather')}>
+          <button type="button" className={styles.navBar} onClick={() => router.push('/weather')}>
             Space Weather
           </button>
-          <button type="button" className={styles.navBar} onClick={() => router.push('/Solar')}>
+          <button type="button" className={styles.navBar} onClick={() => router.push('/solar')}>
             Solar Wind
           </button>
-          <button type="button" className={styles.navBar} onClick={() => router.push('/Parker')}>
+          <button type="button" className={styles.navBar} onClick={() => router.push('/parker')}>
             Parker Solar Probeher
           </button>
-          <button type="button" className={styles.navBar} onClick={() => router.push('/About')}>
+          <button type="button" className={styles.navBar} onClick={() => router.push('/about')}>
             About
           </button>
         </div>

@@ -13,7 +13,7 @@ const Home = () => {
   function getStart() {
     // setTransition('all 1s ease-out')
     // setTransform('scale(2,2)')
-    router.push('/Weather');
+    router.push('/weather');
   }
 
   return (

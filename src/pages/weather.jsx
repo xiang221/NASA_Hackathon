@@ -26,7 +26,7 @@ const Weather = () => {
 
   async function getData() {
     try {
-      const data = await fetch('https://80c3-2401-e180-8842-8330-f6-145b-a4e-fad3.jp.ngrok.io/low_energy_protons.json');
+      const data = await fetch('https://hero-parker-server.herokuapp.com/low_energy_protons.json');
       console.log(data);
     } catch (error) {
       console.log(error);
