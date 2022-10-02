@@ -3,11 +3,6 @@
     max-width: 100vw;  
 }
 
-.pic{
-    width:80%;
-    height:80%;
-}
-
 .outerContainer{
     width:100%;
     height:100%;
@@ -16,7 +11,6 @@
 
 .innerContainer{
     position:absolute;
-
 }
 
 .contentContainer{
@@ -29,12 +23,21 @@
     position: absolute;
     left:60%;
     top:20px;
+    z-index: 5;
+}
+
+.picContainer{
+    position: absolute;
+    top:20px;
+    left:13%;
+    margin-top: 100px;
 }
 
 .earthLinePic{
     position: absolute;
     width: '20%';
     overflow: hidden;
+    z-index: 5;
 }
 
 
@@ -42,11 +45,12 @@
     position: absolute;
     top:70px;
     left:13%;
+    z-index: 5;
 }
 
 .paragraphContainerLeft{
     font-size: 25px;
-    width: 450px;
+    width: 500px;
     margin: 0 100px;
     position: relative;
     top:30px;
@@ -55,11 +59,29 @@
 
 .paragraphContainerRight{
     font-size: 25px;
-    width: 400px;
+    width: 500px;
     margin: 0 50px;
     position: relative;
     left:60%;
     top:120px;
+}
+
+.paragraphContainer{
+    font-size: 25px;
+    width: 1000px;
+    margin: 0 50px;
+    position: relative;
+    top:120px;
+    left:100px;
+    margin-top: 30px 0;
+}
+
+
+.aboutPage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title{
@@ -72,18 +94,12 @@
     width:400px;
 }
 
-/* .solorPicContainer{
-    display: flex;
-    position: relative;
-    top:30px;
-    flex-direction: row;
-    object-fit: cover;
-} */
 
 .satellitePic{
     position: absolute;
     top:70px;
     left:45%;
+    z-index: 5;
 }
 
 .badWeatherPic{
@@ -91,28 +107,51 @@
     top:250px;
     left:40%;
     cursor: pointer;
+    z-index: 5;
 }
 
 .lightPic{
     position: absolute;
     left:27.5%;
     top:270px;
+    z-index: 5;
 }
 
 .weatherResultPic{
     position: absolute;
     left:16%;
     top:200px;
+    z-index: 5;
 }
 
 .elementPic{
     position: absolute;
     left:16%;
     top:150px;
+    z-index: 5;
 }
 
 .solorWindPic{
     position: absolute;
     left:-10%;
     top:20px;
+    z-index: 5;
+}
+
+
+.picOnBtn{
+    position: absolute;
+    cursor: pointer;
+    left:270px;
+    top:100px;
+}
+
+.memberPic{
+    position: absolute;
+}
+
+.memberContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
 }

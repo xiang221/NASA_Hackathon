@@ -1,12 +1,14 @@
 import React from 'react';
 import * as d3 from "d3";
 
+
 export const Chart1 = (props) => {
   //code here
-  console.log(props.chart, props.data);
-  if (!props.data){
-    return
+
+  if (!props.data) {
+    return;
   }
+
 
   let data = props.data[0]
 
@@ -15,9 +17,11 @@ export const Chart1 = (props) => {
   width = 500 - margin.left - margin.right,
   height = 250 - margin.top - margin.bottom;
 
+
   // append the svg obgect to the body of the page
   // appends a 'group' element to 'svg'
   // moves the 'group' element to the top left margin
+
   const svg = d3.select(".diagram")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -67,10 +71,11 @@ export const Chart1 = (props) => {
   .style("stroke", "#ffffff")
   .style("stroke-width", "3");
 
+
   return (
     //html
-    <div style={{left:'200px'}}>Chart1
-      <svg class='diagram'></svg>
+    <div>
+      <svg class="diagram"></svg>
     </div>
   );
 };
