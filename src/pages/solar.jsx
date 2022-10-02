@@ -12,6 +12,7 @@ const Solar = () => {
       <div className={styles.wrapper}>
         <Bar top={'900px'} />
         <Bar top={'1900px'} />
+        <Bar top={'2900px'} />
         <div className={styles.contentContainer}>
           <div className={styles.solorWindPic} style={{ width: '30%', height: '90%' }}>
             <Image alt="" src="/assets/helf_sun.png" layout="fill" objectFit="contain" />
@@ -53,6 +54,13 @@ const Solar = () => {
               Protect our Earth&apos;s magnetic field
             </p>
             <Chart />
+          </div>
+        </div>
+        <div className={styles.contentContainer} style={{ marginTop: '0' }}>
+          <div className={styles.paragraphContainerLeft}>
+            <p className={styles.title} style={{ width: '1000px' }}>
+              Connect Arduino to control our hardware device
+            </p>
           </div>
         </div>
       </div>
