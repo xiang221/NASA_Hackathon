@@ -7,7 +7,6 @@ const Header = (props = 'main') => {
   const router = useRouter();
   let img;
   props.type == 'index' ? (img = '/assets/logo_white.png') : (img = '/assets/logo_yellow.png');
-  console.log(router.pathname);
 
   return (
     <div className={styles.headerContainer}>
